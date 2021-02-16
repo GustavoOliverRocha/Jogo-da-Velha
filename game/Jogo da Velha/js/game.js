@@ -1,7 +1,7 @@
 //Por padrão vão ficar como 0. 1 representará o 'X' e 2 representará 'O' 
 	var tabuleiro = [[0,0,0],
-					[0,0,0],
-					[0,0,0]];
+					 [0,0,0],
+					 [0,0,0]];
 	var vez = "X";
 	var i;
 	var diago = 2;//diagonal
