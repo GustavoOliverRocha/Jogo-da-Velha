@@ -1,0 +1,67 @@
+        h1,h4
+		{
+			font-family: 'Arial';
+		}
+		#pppp
+		{
+			width: auto;
+			height: auto;
+		}
+		#tabuleiro
+		{
+			font-family: 'Comic Sans MS';
+			font-size: 45px;
+			width: 40%;
+			height: 70%;;
+			background: #2F4F4F;
+			border-style: 5px;
+			box-shadow: 5px 10px 18px #888888;
+			border-radius: 5px;
+		}
+		#tabuleiro::selection
+		{
+			background-color: transparent;
+		}
+		.row0,.row1,.row2
+
+		{
+			line-height: 100px;
+			width: 120px;
+			height: 120px;
+			display: inline-block;
+			background-color: white;
+			position: relative;		
+			margin-bottom: -32px;
+			margin-left: 6px;
+		}
+		.row0:hover
+		{
+			background-color: #E6E6FA;
+			cursor: pointer;
+		}
+		.row0::selection
+		{
+			background-color: transparent;
+		}
+		.row1:hover
+		{
+			background-color: #E6E6FA;
+			cursor: pointer;
+		}
+		.row1::selection
+		{
+			background-color: transparent;
+		}
+		.row2:hover
+		{
+			background-color: #E6E6FA;
+			cursor: pointer;
+		}
+		.row2::selection
+		{
+			background-color: transparent;
+		}
+		.players
+		{
+			position: absolute;
+		}

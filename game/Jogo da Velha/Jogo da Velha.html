@@ -3,87 +3,16 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>Jogo da Velha</title>
 </head>
 <body>
-	<style type="text/css">
-		h1,h4
-		{
-			font-family: 'Arial';
-		}
-		#pppp
-		{
-			width: auto;
-			height: auto;
-		}
-		#tabuleiro
-		{
-			font-family: 'Comic Sans MS';
-			font-size: 45px;
-			width: 40%;
-			height: 70%;;
-			background: #2F4F4F;
-			border-style: 5px;
-			box-shadow: 5px 10px 18px #888888;
-			border-radius: 5px;
-		}
-		#tabuleiro::selection
-		{
-			background-color: transparent;
-		}
-		.row0,.row1,.row2
-
-		{
-			line-height: 100px;
-			width: 120px;
-			height: 120px;
-			display: inline-block;
-			background-color: white;
-			position: relative;		
-			margin-bottom: -32px;
-			margin-left: 6px;
-		}
-		.row0:hover
-		{
-			background-color: #E6E6FA;
-			cursor: pointer;
-		}
-		.row0::selection
-		{
-			background-color: transparent;
-		}
-		.row1:hover
-		{
-			background-color: #E6E6FA;
-			cursor: pointer;
-		}
-		.row1::selection
-		{
-			background-color: transparent;
-		}
-		.row2:hover
-		{
-			background-color: #E6E6FA;
-			cursor: pointer;
-		}
-		.row2::selection
-		{
-			background-color: transparent;
-		}
-		.players
-		{
-			position: absolute;
-		}
-		
-	</style>
-	
 	<div id="pppp" align="center">
 		<h1>Jogo da Velha</h1>
 		<br>
 		<h5 id="vez">O 'X' começa primeiro</h5>
 		<br><br>
 
-		
 		<div id="tabuleiro">
 			<div id="linha0_col0" class="row0" onclick="jogada(0,0);">-</div>
 			<div id="linha0_col1" class="row0" onclick="jogada(0,1);">-</div>
