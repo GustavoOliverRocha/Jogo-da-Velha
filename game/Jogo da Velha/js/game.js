@@ -33,7 +33,6 @@
 	//Mexendo com as colunas
 	function jogada(row, col)
 	{
-
 		if (tabuleiro[row][col] > 0)
 		{
 			alert("Essa parte ja foi escolhida");
@@ -43,10 +42,7 @@
 		else if (vez == "X") 
 		{
 			//Colocando o X onde foi clicado
-			document.getElementById("linha" + row + "_col" + col).innerHTML = "&#10006;";
-
-			//Estilizando o X
-			$("#linha" + row + "_col" + col).css({"color":"#DC143C","text-shadow": "3px 2px 3px black"});
+			setJogada(row,col,"#DC143C","&#10006;");
 
 			//Marcando a posição do X na matriz
 			tabuleiro[row][col] = 1;
@@ -59,13 +55,13 @@
 		// vez do jogador 2
 		else if(vez == "O")
 		{
-			document.getElementById("linha" + row + "_col" + col).innerHTML = "O";
-			$("#linha" + row + "_col" + col).css({"color":"#00BFFF","text-shadow": "3px 2px 3px black"});
+			setJogada(row,col,"#00BFFF","O");
 			tabuleiro[row][col] = 2;
 			vez = "X";
 			document.getElementById("vez").innerHTML = "Agora é a vez do: " + vez;
 		}
 
+		//Fim do Jogo
 		for(i = 0;i < 3;i++)
 		{
 			//Condições de vencer jogador 1
@@ -73,7 +69,7 @@
 			if(tabuleiro[0][i] == 1 && tabuleiro[1][i] == 1 && tabuleiro[2][i] == 1)
 			{
 				/*Por questão de visual e localização esse i2 servirá para marcar aonde que o jogador venceu
-				* no caso de ser na Vertical a linha terá um valor variado entre 0,1 e 2
+				* no caso de ser na Vertical a linha(row) terá um valor variado entre 0,1 e 2
 				* e a Coluna terá um valor fixo que será o i que cumprir uma das condições abaixo
 				* no caso de ser horizontal será ao contrário sendo a linha um valor fixo e a coluna um valor variado
 				*/
@@ -82,6 +78,7 @@
 					$("#linha" + i2 + "_col" + i).css({"background-color":"#00FF7F"});
 				}
 				fimJogo(1,"vertical");
+				return;
 			}
 
 			//Caso ele vença na Horizontal - - -
@@ -92,6 +89,7 @@
 					$("#linha" + i + "_col" + i2).css({"background-color":"#00FF7F"});
 				}
 				fimJogo(1,"Horizontal");
+				return;
 			}
 
 			//Caso ele vença na Diagonal (ambas direita e esquerda)
@@ -117,14 +115,14 @@
 
 			//Condições de vencer jogador 2
 			//Caso ele vença na Vertical | | |
-			if(tabuleiro[0][i] == 2 && tabuleiro[1][i] == 2 && tabuleiro[2][i] == 2)
+			else if(tabuleiro[0][i] == 2 && tabuleiro[1][i] == 2 && tabuleiro[2][i] == 2)
 			{
 				for(var i2 = 0;i2 < 3;i2++)
 				{
 					$("#linha" + i2 + "_col" + i).css({"background-color":"#00FF7F"});
 				}
 				fimJogo(2,"vertical");
-
+				return;
 			}
 
 			//Caso ele vença na Horizontal - - -
@@ -136,7 +134,7 @@
 					$("#linha" + i + "_col" + i2).css({"background-color":"#00FF7F"});
 				}
 				fimJogo(2,"Horizontal");
-
+				return;
 			}
 
 			//Caso ele vença na Diagonal (ambas direita e esquerda)
@@ -157,8 +155,14 @@
 				fimJogo(2,"Diagonal");
 				return;
 			}
+
 		}
 
+	}
+	function setJogada(linha,col,cor,obj)
+	{
+		document.getElementById("linha" + linha + "_col" + col).innerHTML = obj;
+		$("#linha" + linha + "_col" + col).css({"color":cor,"text-shadow": "3px 2px 3px black"});
 	}
 
 
